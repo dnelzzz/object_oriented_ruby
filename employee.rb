@@ -35,27 +35,35 @@ class Employee
   attr_reader :first_name, :last_name, :salary # replaces commented section below.
   attr_writer :active
 
-  def initialize(input_first_name, input_last_name, input_salary)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @salary = input_salary
+  # def initialize(input_first_name, input_last_name, input_salary)
+  #   @first_name = input_first_name
+  #   @last_name = input_last_name
+  #   @salary = input_salary
+  # end
+
+  # inializie beloew replaces cumberson above
+
+  def initialize(input_option_hash)
+    @first_name = input_option_hash[:first_name]
+    @last_name = input_option_hash[:last_name]
+    @salary = input_option_hash[:salary]
   end
+
+  #   def get_first_name
+  #     return @first_name
+  #   end
+
+  #   def get_last_name
+  #     return @last_name
+  #   end
+
+  #   def get_salary
+  #     return @salary
+  #   end
 
   def give_annual_raise
     @salary = 1.5 * @salary
   end
-
-#   def get_first_name
-#     return @first_name
-#   end
-
-#   def get_last_name
-#     return @last_name
-#   end
-
-#   def get_salary
-#     return @salary
-#   end
 
   def print_info
     puts "#{@first_name} #{@last_name} makes #{@salary} dollars per year"
@@ -77,11 +85,11 @@ class Employee
 
 end
 
-employee1 = Employee.new("James", "France", 1500000)
+employee1 = Employee.new({first_name: "Brad", last_name: "Pitt", salary: 5000000})
 employee1.give_annual_raise
 employee1.print_info
 puts employee1.print_info2
-employee2 = Employee.new("Jennifer", "Aniston", 1000000)
+employee2 = Employee.new({first_name: "J", last_name: "Lo", salary: 5000000})
 employee2.give_annual_raise
 employee2.print_info
 puts employee2.print_info2
