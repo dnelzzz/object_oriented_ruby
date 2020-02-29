@@ -18,6 +18,7 @@ puts "#{employee2["first_name"]} #{employee2["last_name"]} makes #{employee2["sa
 #employee using symbols
  employee1 = {:first_name => "James", :last_name => "Franco", :salary => 1500000}
  employee2 = {:first_name => "Jennifer", :last_name => "Aniston", :salary => 1000000}
+ employee1[:salary] = 1.1 * employee1[:salary]
 
  puts employee1[:first_name] + " " + employee1[:last_name] + " makes " + employee1[:salary].to_s + " dollar per year"
  puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:salary]} dollars per year"
@@ -37,13 +38,36 @@ class Employee
     @salary = input_salary
   end
 
+  def give_annual_raise
+    @salary = 1.5 * @salary
+  end
+
+  def get_first_name
+    return @first_name
+  end
+
+  def get_last_name
+    return @last_name
+  end
+
   def print_info
     puts "#{@first_name} #{@last_name} makes #{@salary} dollars per year"
   end
+
+  def print_info2
+    return "#{@first_name} #{@last_name} makes #{@salary} per year"
+  end 
 end
 
 employee1 = Employee.new("James", "France", 1500000)
+employee1.give_annual_raise
 employee1.print_info
+puts employee1.print_info2
 employee2 = Employee.new("Jennifer", "Aniston", 1000000)
+employee2.give_annual_raise
 employee2.print_info
+puts employee2.print_info2
+
+puts employee1.get_first_name
+puts employee2.get_last_name
 
