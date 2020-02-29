@@ -32,6 +32,9 @@ puts "#{employee2["first_name"]} #{employee2["last_name"]} makes #{employee2["sa
 #class
 
 class Employee
+  attr_reader :first_name, :last_name, :salary # replaces commented section below.
+  attr_writer :active
+
   def initialize(input_first_name, input_last_name, input_salary)
     @first_name = input_first_name
     @last_name = input_last_name
@@ -42,17 +45,17 @@ class Employee
     @salary = 1.5 * @salary
   end
 
-  def get_first_name
-    return @first_name
-  end
+#   def get_first_name
+#     return @first_name
+#   end
 
-  def get_last_name
-    return @last_name
-  end
+#   def get_last_name
+#     return @last_name
+#   end
 
-  def get_salary
-    return @salary
-  end
+#   def get_salary
+#     return @salary
+#   end
 
   def print_info
     puts "#{@first_name} #{@last_name} makes #{@salary} dollars per year"
@@ -83,13 +86,13 @@ employee2.give_annual_raise
 employee2.print_info
 puts employee2.print_info2
 
-puts employee1.get_first_name
-puts employee2.get_last_name
+puts employee1.first_name
+puts employee2.last_name
 
 employee2.change_salary(15)
-puts employee2.get_salary
+puts employee2.salary
 employee2.change_salary2=(30)
-puts employee2.get_salary
+puts employee2.salary
 
 
 
