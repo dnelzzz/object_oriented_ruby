@@ -26,3 +26,24 @@ puts "#{employee2["first_name"]} #{employee2["last_name"]} makes #{employee2["sa
 
  employee1 = {first_name: "james", last_name: "france", salary: 1500000}
  puts "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:salary]} dollars per year"
+
+
+#class
+
+class Employee
+  def initialize(input_first_name, input_last_name, input_salary)
+    @first_name = input_first_name
+    @last_name = input_last_name
+    @salary = input_salary
+  end
+
+  def print_info
+    puts "#{@first_name} #{@last_name} makes #{@salary} dollars per year"
+  end
+end
+
+employee1 = Employee.new("James", "France", 1500000)
+employee1.print_info
+employee2 = Employee.new("Jennifer", "Aniston", 1000000)
+employee2.print_info
+
