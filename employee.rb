@@ -50,6 +50,10 @@ class Employee
     return @last_name
   end
 
+  def get_salary
+    return @salary
+  end
+
   def print_info
     puts "#{@first_name} #{@last_name} makes #{@salary} dollars per year"
   end
@@ -57,6 +61,10 @@ class Employee
   def print_info2
     return "#{@first_name} #{@last_name} makes #{@salary} per year"
   end 
+
+  def change_salary(input_new_salary)
+    @salary = input_new_salary
+  end
 end
 
 employee1 = Employee.new("James", "France", 1500000)
@@ -70,4 +78,9 @@ puts employee2.print_info2
 
 puts employee1.get_first_name
 puts employee2.get_last_name
+
+employee2.change_salary(15)
+puts employee2.get_salary
+
+
 
