@@ -65,6 +65,13 @@ class Employee
   def change_salary(input_new_salary)
     @salary = input_new_salary
   end
+
+  # OR
+
+  def change_salary2=(input_new_salary)
+    @salary = input_new_salary
+  end
+
 end
 
 employee1 = Employee.new("James", "France", 1500000)
@@ -80,6 +87,8 @@ puts employee1.get_first_name
 puts employee2.get_last_name
 
 employee2.change_salary(15)
+puts employee2.get_salary
+employee2.change_salary2=(30)
 puts employee2.get_salary
 
 
