@@ -57,7 +57,7 @@ class Employee
   #     return @last_name
   #   end
 
-  #   def get_salary
+  #   def get_salary 
   #     return @salary
   #   end
 
@@ -89,7 +89,7 @@ employee1 = Employee.new({first_name: "Brad", last_name: "Pitt", salary: 5000000
 employee1.give_annual_raise
 employee1.print_info
 puts employee1.print_info2
-employee2 = Employee.new({first_name: "J", last_name: "Lo", salary: 5000000})
+employee2 = Employee.new({first_name: "J", last_name: "Lo", salary: 5000000}) # no {}
 employee2.give_annual_raise
 employee2.print_info
 puts employee2.print_info2
