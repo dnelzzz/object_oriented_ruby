@@ -16,7 +16,7 @@ class Employee
   end
 
   def give_annual_raise
-    @salary = 1.5 * @salary
+    @salary = 1.05 * @salary
   end
 
   def print_info
