@@ -1,3 +1,10 @@
+module EmailReportable
+   def send_report 
+    puts "Sending email..."
+    puts "Email sent!"
+  end
+end
+
 class Employee
   attr_reader :first_name, :last_name, :salary
   attr_writer :active
@@ -22,28 +29,21 @@ class Employee
 end
 
 class Manager < Employee
+  include EmailReportable
   def initialize(input_option_hash)
     super
     @employees = input_option_hash[:employees]
   end
 
-  def send_report 
-    puts "Sending email..."
-    puts "Email sent!"
-  end
-
   def give_all_raises
-    # index = 0
-    # num_employees = @employees.length
-    # num_employees.times do
-    #   employee = @employees[index]
-    #   employee.give_annual_raise
-    #   index = index + 1
-    # end
     @employees.each do |employee|
       employee.give_annual_raise
     end
   end
+end
+
+class Intern < Employee
+  include EmailReportable
 end
 
 employee1 = Employee.new(
@@ -68,7 +68,12 @@ manager = Manager.new(
   employees: [employee1, employee2],
 )
 
-# p manager
+intern1 = Intern.new(
+  first_name: "Bryan",
+  last_name: "Peters",
+  salary: 30000
+)
 
-p manager.give_all_raises
-# p manager
+intern1.print_info
+intern1.send_report
+p intern1

@@ -1,3 +1,9 @@
+# TIL - Today I learned
+
+# 3/10/20
+
+# In this example, the inheriting classes (Car and Bike) require a different number of arguments than the inherited class (Vehicle). This require the use of super() instead of super in the inheriting classes.
+
 class Vehicle
   attr_reader :speed, :direction
   attr_writer :speed, :direction
@@ -5,18 +11,6 @@ class Vehicle
   def initialize
     @speed = 0
     @direction = 'north'
-  end
-
-  def brake
-    @speed = 0
-  end
-
-  def accelerate
-    @speed += 10
-  end
-
-  def turn(new_direction)
-    @direction = new_direction
   end
 end
 
@@ -28,10 +22,6 @@ class Car < Vehicle
     @model = input_options_hash[:model]
     @year = input_options_hash[:year]
   end
-
-  def honk_horn
-    puts "Beeeeeeep!"
-  end
 end
 
 class Bike < Vehicle
@@ -40,9 +30,6 @@ class Bike < Vehicle
     @speeds = input_options_hash[:speeds]
     @type = input_options_hash[:type]
     @weight = input_options_hash[:weight]
-  end
-  def ring_bell
-    puts "Ring ring!"
   end
 end
 
